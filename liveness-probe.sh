@@ -1,4 +1,4 @@
-# Magento liveness probe shell script for Kubernetes when nginx and magento are in the same container
+# Magento liveness probe shell script for Kubernetes. Can be used when nginx and magento are in the same container.
 
 #!/bin/bash
 response=$(curl -sL -w "%{http_code}\\n" --header "Host: "$HOST_MAGENTO"" $HOSTNAME:8080/index.php -o /dev/null);
